@@ -5,7 +5,8 @@ pipeline {
         stage('Make script executable') {
             steps {
                 sh '''chmod 755 testscript.sh
-                ./testscript.sh > testresult.txt'''   
+                ./testscript.sh > testresult.txt''' 
+                cat testresult.txt  
             }
         }
         stage("Fingerprint artifact") {
