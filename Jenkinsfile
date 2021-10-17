@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Git Clone') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/jenkinsfile']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/smagan1/jenkins-test.git']]])
+                git clone https://github.com/smagan1/jenkins-test.git
+                echo "pulled the code"
             }
         }
         stage('Make script executable') {
