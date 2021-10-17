@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Git Clone') {
-            steps {
-                git clone https://github.com/smagan1/jenkins-test.git
-                echo "pulled the code"
-            }
-        }
         stage('Make script executable') {
             steps {
                 sh '''chmod 755 testscript.sh
